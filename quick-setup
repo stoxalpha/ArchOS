@@ -1,0 +1,111 @@
+e-> nouveau.modeset=0
+----------------------
+loadkeys us
+ls /sys/firmware/efi/efivars
+ip link 
+iwctl
+--------------------
+timedatectl set-ntp true
+---------------------
+fdisk -l
+-----
+mkfs.ext4 /dev/sda3
+swapon /dev/sda2
+-----
+mount /dev/sda3 /mnt
+mkdir -p /mnt/boot/efi
+mount /dev/sda1 /mnt/boot/efi
+
+--------------------------------------------
+pacstrap /mnt base base-devel linux linux-firmware linux-headers nvidia refind refind-efi grub efibootmgr os-prober mtools git dkms iwd xterm termite konsole kitty xorg-server slim slim-themes xss-lock archlinux-themes-slim lightdm lightdm-gtk-greeter lightdm-webkit2-greeter networkmanager bluez bluez-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth openbox picom obconf tint2 rofi lxappearance lxappearance-obconf qt5ct qt5-styleplugins  nitrogen dunst xfce4-power-manager pcmanfm thunar vi vim nano man qutebrowser geany pavucontrol mpd mpc
+
+pacstrap /mnt cURL wget inxi htop neofetch unzip xarchiver clipit
+
+pacstrap /mnt 8192eu-dkms
+
+------------------------------
+genfstab -U /mnt >> /mnt/etc/fstab
+arch-chroot /mnt
+ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+hwclock --systohc
+locale-gen
+
+vi /etc/locale.conf
+LANG=en_US.UTF-8
+
+vi /etc/hostname
+ArchBox
+
+vi /etc/hosts
+127.0.0.1	ArchBox
+::1		localhost
+127.0.1.1	ArchBox.localdomain	ArchBox
+
+-------------------
+mkinitcpio -P
+passwd
+
+--------------
+useradd -m [username] -G wheel
+passwd [username]
+
+
+sudo systemctl enable slim 
+sudo systemctl start NetworkManager
+sudo systemctl enable NetworkManager
+sudo systemctl status bluetooth
+sudo systemctl status bluetooth enable
+sudo systemctl status bluetooth start
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+*******************
+Check Failed units
+systemctl --failed
+
+*******************
+inxi -Fxz
+lsusb
+rfkill list
+
+git clone https://github.com/clnhub/rtl8192eu-linux.git
+cd rtl8192eu-linux
+sudo dkms add .
+sudo dkms install rtl8192eu/1.0
+echo "blacklist rtl8xxxu" | sudo tee /etc/modprobe.d/rtl8xxxu.conf
+sudo systemctl reboot
+lsmod | grep 8192eu
+
+------------------
+Make sure .gitconfig is good
+mkdir Backup
+mv .bashrc Backup
+
+mkdir Setup
+cd Setup
+git clone https://aur.archlinux.org/yay.git
+sudo chown -R stoxalpha:users yay
+cd yay/
+makepkg -si
+yay -S obmenu-generator
+obmenu-generator -p -i
+
+yay -S t2ec
+yay -S psuinfo
+yay -S viewnior
+yay -S brightnessctl
+yay -S scrot
+yay -S ncmpcpp
+
+gpg --keyserver pool.sks-keyservers.net --recv-keys 2EBF997C15BDA244B6EBF5D84773BD5E130D1D45
+gpg --keyserver pool.sks-keyservers.net --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
+yay -S spotify
+
+git clone https://aur.archlinux.org/yay.git
+
+git clone https://github.com/obliviousofcraps/dotfiles
+cp .bashrc /home/stoxalpha/
+cp .xinitrc /home/stoxalpha/
+cp .vimrc /home/stoxalpha/
+
+sudo chmod g+w /run/mpd
+sudo chmod 775 /run/mpd
