@@ -17,7 +17,7 @@ mkdir -p /mnt/boot/efi
 mount /dev/sda1 /mnt/boot/efi
 
 --------------------------------------------
-pacstrap /mnt base base-devel linux linux-firmware linux-headers nvidia refind refind-efi grub efibootmgr os-prober mtools git dkms iwd xterm termite konsole kitty xorg-server slim slim-themes xss-lock archlinux-themes-slim lightdm lightdm-gtk-greeter lightdm-webkit2-greeter networkmanager bluez bluez-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth alsa-utils pavucontrol openbox picom obconf tint2 rofi lxappearance lxappearance-obconf qt5ct nitrogen dunst xfce4-power-manager pcmanfm thunar vi vim nano cronie man qutebrowser geany mpd mpc audacious wget htop neofetch unzip xarchiver
+pacstrap /mnt base base-devel linux linux-firmware linux-headers nvidia nvidia-settings refind refind-efi grub efibootmgr os-prober mtools git dkms iwd xterm termite konsole kitty xorg-server slim slim-themes xss-lock archlinux-themes-slim lightdm lightdm-gtk-greeter lightdm-webkit2-greeter networkmanager bluez bluez-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer alsa-utils pavucontrol openbox picom obconf tint2 rofi lxappearance lxappearance-obconf qt5ct nitrogen dunst xfce4-power-manager pcmanfm thunar vi vim nano cronie man qutebrowser geany mpd mpc audacious playerctl wget htop neofetch unzip xarchiver discord gimp gnome-icon-theme gparted neofetch p7zip ranger reflector ttf-dejavu xbindkeys xscreensaver ttf-nerd-fonts-symbols-mono
 
 ------------------------------
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -73,7 +73,8 @@ makepkg -si
 yay -S obmenu-generator
 obmenu-generator -p -i
 
-yay -S inxi t2ec psuinfo viewnior brightnessctl scrot ncmpcpp cava spotify clipit qt5-styleplugins
+yay -S inxi t2ec psuinfo viewnior brightnessctl scrot ncmpcpp cava spotify clipit qt5-styleplugins flatery-icon-theme-git geany-themes nordic-polar-theme-git numix-icon-theme-git openbox-themes gtk-theme-shades-of-gray flattastic-theme spicetify-cli spicetify-themes-git ttf-font-awesome-4 ttf-mac-fonts nerd-fonts-complete nerd-fonts-fira-code
+#yay -S ttf-google-fonts-git
 
 git clone https://aur.archlinux.org/yay.git
 
