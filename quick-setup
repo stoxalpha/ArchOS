@@ -55,6 +55,10 @@ sudo systemctl status bluetooth start
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 *************************************************
+sudo pacman -S intel-ucode
+grub-mkconfig -o /boot/grub/grub.cfg
+
+
 Check Failed units
 systemctl --failed
 journalctl -b (Check for Failures)
