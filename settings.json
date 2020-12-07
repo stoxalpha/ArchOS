@@ -42,6 +42,7 @@
         "panelTitle.activeBorder": "#a665d1",
         "panelTitle.activeForeground": "#601791",
         "panelTitle.inactiveForeground": "#a665d1",
+        "editorWarning.foreground": "#e6d0d0",
         "rust_analyzer.inlayHints.foreground.parameterHints": "#e12ee7",
         "rust_analyzer.inlayHints.foreground.chainingHints": "#FF7B9C",
         "rust_analyzer.inlayHints.foreground": "#9400D3",
@@ -158,7 +159,7 @@
             {
                 "scope": "meta.import.rust",
                 "settings": {
-                    "foreground": "#8CBA60"
+                    "foreground": "#FE6847"
                 }
             },
             {
