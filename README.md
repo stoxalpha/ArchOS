@@ -27,3 +27,5 @@ Custom Arch OS Setup and Customized VS Code Light theme for Rust
 
 
 ![Custom Visual Studio Code Light Theme for Rust](https://github.com/hftautobot/ArchOS/blob/master/Screenshots/7_scrot.png?raw=true "Custom Visual Studio Code Light Theme for Rust")
+
+![Custom Visual Studio Code Light Theme for Rust](https://github.com/hftautobot/ArchOS/blob/master/Screenshots/2020-12-07-110715_1920x1080_scrot.png?raw=true "Custom Visual Studio Code Light Theme for Rust")
