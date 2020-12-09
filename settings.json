@@ -9,7 +9,7 @@
     "rust.all_features": true,
     "workbench.iconTheme": "material-icon-theme",
     "terminal.integrated.shell.linux": "/bin/bash",
-    "workbench.colorTheme": "Eva Light",
+    "workbench.colorTheme": "Colorful Light Theme for Rust",
     "window.zoomLevel": 1,
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": false,
@@ -23,23 +23,24 @@
     "workbench.settings.openDefaultKeybindings": true,
     "editor.defaultFormatter": "statiolake.vscode-rustfmt",
     "editor.fontLigatures": true,
+    "activitusbar.activeColour": "#6ee817",
+    // "activitusbar.activeColour": "#90ef86",
+    // "activitusbar.activeColour": "#2ce817",
+    // "activitusbar.activeColour": "#99ed90",
+    "activitusbar.inactiveColour": "#FFFFFF",
 
-    "workbench.colorCustomizations": {  
+    "workbench.colorCustomizations": {
         "editor.background": "#FFFFFF",
-        "editor.lineHighlightBackground": "#eae7ec",   
+        "editor.lineHighlightBackground": "#eae7ec",
         "editor.selectionBackground": "#CCC9E7",
-        // Other possible options. To finalize later.
-        // "editor.selectionBackground": "#CFCFCD",
-        // "editor.selectionBackground": "#8FF7A7",
         "editor.selectionHighlightBackground": "#bab3df",
         "editor.foldBackground": "#eae7ec",
         "activityBar.foreground": "#601791",
         "activityBar.inactiveForeground": "#a665d1",
         "activityBar.border": "#d9bfeb",
         "statusBar.background": "#2F86D3",
-        "statusBar.foreground": "#FFFFFF",        
+        "statusBar.foreground": "#FFFFFF",
         "panel.border": "#d9bfeb",
-        "panelTitle.activeBorder": "#a665d1",
         "panelTitle.activeForeground": "#601791",
         "panelTitle.inactiveForeground": "#a665d1",
         "editorWarning.foreground": "#ebdddd",
@@ -274,6 +275,13 @@
                 }
             },
             {
+                "scope": "entity.name.type.lifetime.rust",
+                "settings": {
+                    "foreground": "#A06CD5",
+                    "fontStyle": "italic bold"
+                }
+            },
+            {
                 "scope": "entity.other.attribute-name.table.toml",
                 "settings": {
                     "foreground": "#FF84E8",
@@ -346,4 +354,8 @@
         "#560bad",
     ],
     "bracket-pair-colorizer-2.colorMode": "Independent",
+    "coloured-status-bar-problems.colour.info.active": "#9af4f4",
+    "coloured-status-bar-problems.colour.error.active": "#8c1212",
+    "coloured-status-bar-problems.colour.warning.active": "#efb786",
+    "workbench.activityBar.visible": false,
 }
